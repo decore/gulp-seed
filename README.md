@@ -12,6 +12,7 @@ A bit clumsy, some stuff may not work.
  * Webdriver.io with Mocha tests injection for the specific targets
 
 There might be some branches with Angular, React + rx.js support.
+I'll implement them sooner or later.
 
 Licensed under the [WTFPLv2](http://www.wtfpl.net/about/) license.
 
