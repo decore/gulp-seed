@@ -41,7 +41,6 @@
     "nib": "^1.0.4",
     "node-static": "^0.7.6",
     "protractor": "1.4.0",
-    "require-dir": "^0.1.0",
     "webdriverio": "^2.3.0",
     "webpack": "^1.4.13"
   },

@@ -2,6 +2,7 @@
     'use strict';
 
     var filter = require('gulp-filter'),
+        fs = require('fs'),
         gulp = require('gulp'),
         gulpif = require('gulp-if'),
         gutil = require('gulp-util'),
@@ -26,6 +27,16 @@
         'XXXHDPI': 4,
     };
 
+    // Let's make stylus happy
+    if (!fs.existsSync('.cache/stylesheets')) {
+        fs.mkdirSync('.cache');
+        fs.mkdirSync('.cache/stylesheets');
+        Object.keys(densityCoefficients).forEach(function(density) {
+            fs.writeFileSync('.cache/stylesheets/sprites-' + density + '.styl', '');
+        });
+        fs.writeFileSync('.cache/stylesheets/iconfont.styl', '');
+    }
+
     var onError = function(err) {
         gutil.beep();
         gutil.log(gutil.colors.red(err));
@@ -49,6 +60,7 @@
             var merged = merge();
 
             Object.keys(densityCoefficients).map(function(density) {
+
                 merged.add(gulp.src(src)
                     .pipe(newer({
                         dest: dest,
@@ -78,7 +90,7 @@
     gulp.task('sprites', ['rasterize', 'copyRasterSprites'], function() {
         var merged = merge();
 
-        Object.keys(densityCoefficients).map(function(density) {
+        Object.keys(densityCoefficients).forEach(function(density) {
             var spriteData = gulp.src('.cache/images/' + density + '/sprites/**/*.png')
                 .pipe(newer('dist/images/' + density + '/sprites.png'))
                 .pipe(plumber({

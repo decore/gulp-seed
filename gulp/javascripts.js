@@ -19,8 +19,8 @@
     gulp.task('javascripts', ['dependencies'], function(callback) {
         webpack({
             entry: {
-                app: 'app/javascripts/app.js',
-                tests: 'app/javascripts/tests/browser.js',
+                app: './app/javascripts/app.js',
+                tests: './app/tests/browser.js',
                 vendor: []
             },
             output: {
@@ -28,7 +28,6 @@
                 filename: '[name].js'
             },
             plugins: [
-                new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
                 new webpack.ResolverPlugin([
                     new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
                 ], ['normal', 'loader']),
