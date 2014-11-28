@@ -1,0 +1,23 @@
+{
+  "name": "gulp-seed",
+  "version": "0.0.1",
+  "homepage": "https://github.com/VoidNugget/gulp-seed",
+  "license": "MIT",
+  "private": true,
+  "authors": [
+    "Yarosh Yuriy <void.nugget@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "~2.0.1",
+    "chai": "~1.9.2"
+  }
+}
