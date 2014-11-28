@@ -1,7 +1,5 @@
 ## Neat gulp seed
 
-![It's WTFPLv2](http://www.wtfpl.net/wp-content/uploads/2012/12/logo-220x1601.png)
-
 ### Status
 A bit clumsy, some stuff may not work.
 
