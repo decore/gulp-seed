@@ -35,7 +35,7 @@
                 new webpack.optimize.AggressiveMergingPlugin()
             ],
             resolve: {
-                modulesDirectories: ['node_modules', 'app/dependencies'],
+                modulesDirectories: ['./node_modules', './app/dependencies'],
             },
         }, function(err, stats) {
             if (err) {
